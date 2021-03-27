@@ -1,4 +1,4 @@
-# Locobot 
+# LoCoBot Network Setup and Remote Access 
 
 ###### tags : `SIS2021`
 
@@ -61,20 +61,24 @@ Although sshpass is convenient approach, the command is so long. The alias can s
 ```
 
 ## ROS connection
+
+TODO: change to 
+```
+$ source ~/sis2021/environment.sh
+```
 In order to connect two or above machines under ros connection, the master must to be established on host, and the other machines which want to control need to connect the host.
 
 > For LoCoBot
-- Host set on the Xavier-NX, and it ip is 10.42.0.3
-- Slave set on the NUC, and it ip is 10.42.0.2
+- Host set on the NUC, and it ip is 10.42.0.2
 
 *On the host.*
 ```
- $ sudo vim ~/.bashrc
+ $ vim ~/.bashrc
 ```
 *Add two commands on the below.*
 ```
- export ROS_MASTER_URI=http://host_ip:11311
- export ROS_IP=host_ip
+ export ROS_MASTER_URI=http://10.42.0.2:11311
+ export ROS_IP=10.42.0.2
 ```
 
 *On the slave.*
