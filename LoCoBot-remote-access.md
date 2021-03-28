@@ -14,6 +14,8 @@ The LoCoBot is a low-cost mobile manipulator suitable for both navigation and ma
 - WidowX 200 Mobile Manipulator
 - Intel® RealSense™ Depth Camera D435
 ![](https://i.imgur.com/3pOKess.jpg)
+Fig.1 LoCoBot basic setup
+
 
 The LoCoBot's NUC is no GPU, so we added Xavier-NX to execute perception algorithms or deep learning model, and also used switch let NUC, Xavier-NX and laptop can connect each other.
 
@@ -21,13 +23,35 @@ The LoCoBot's NUC is no GPU, so we added Xavier-NX to execute perception algorit
 - Xavier-Nx
 - Switch
 ![](https://i.imgur.com/vndu35K.jpg)
+Fig.2 Addition setup
 
 ## Network setup
 
 Xavier-NX and NUC are connected to switch by RJ45 so that can connect each other and connect wifi to use Internet.  The LoCoBot and Xavier-NX password are **locobot** and **111111**, respectively.
 
-![](https://i.imgur.com/6YiqPX0.png)
+![](https://i.imgur.com/K7OEK8j.png)
+Fig.3 LoCoBot network setup
 
+
+> LoCoBot wired fix ip
+
+- Xavier-NX is 10.42.0.3
+- NUC is 10.42.0.2
+
+> LoCoBot's hostname
+
+| LoCoBot  | Jetson hostname   | NUC hostname   |
+|:--------:|:-----------------:|:--------------:|
+| 1        | xavier-nx01       | locobot        |
+| 2        | xavier-nx02       | locobot        |
+| 3        | xavier-nx03       | locobot        |
+| 4        | xavier-nx04       | locobot        |
+| 5        | xavier-nx05       | locobot        |
+| 6        | xavier-nx06       | locobot        |
+| 7        | xavier-nx07       | locobot        |
+| 8        | xavier-nx08       | locobot        |
+| 9        | xavier-nx09       | locobot        |
+| 10       | xavier-nx10       | locobot        |
 
 ## SSH 
 
@@ -45,7 +69,7 @@ If you don't input this command every time, the **sshpass** package and **alias*
 Although sshpass is convenient approach, the command is so long. The alias can simplify it. You can customize frequently used and long commands as aliases, which will save a lot of time in execution.
 *Edit bashrc.*
 ```
- $ sudo vim ~/.bashrc
+ $ vim ~/.bashrc
 ```
 *Add command on the below.*
 ```
@@ -62,51 +86,52 @@ Although sshpass is convenient approach, the command is so long. The alias can s
 
 ## ROS connection
 
-TODO: change to 
-```
-$ source ~/sis2021/environment.sh
-```
 In order to connect two or above machines under ros connection, the master must to be established on host, and the other machines which want to control need to connect the host.
 
 > For LoCoBot
 - Host set on the NUC, and it ip is 10.42.0.2
 
-*On the host.*
+*On the host, you need to run this command.*
 ```
- $ vim ~/.bashrc
-```
-*Add two commands on the below.*
-```
- export ROS_MASTER_URI=http://10.42.0.2:11311
- export ROS_IP=10.42.0.2
+ $ export ROS_MASTER_URI=http://10.42.0.2:11311
+ $ export ROS_IP=10.42.0.2
 ```
 
-*On the slave.*
+You can write this commands into script, and source it. We already written this script, you just source this environment.
 ```
- $ sudo vim ~/.bashrc
+$ source ~/sis2021/environment.sh
 ```
-*Add two commands on the below.*
+
+> For other machine
+- Slave set on the laptop or Xavier-NX, and it ip is slave_ip
+
+*On the slave, you need to run this command.*
 ```
- export ROS_MASTER_URI=http://host_ip:11311
- export ROS_IP=slave_ip
+ $ export ROS_MASTER_URI=http://10.42.02:11311
+ $ export ROS_IP=slave_ip
 ```
 
 ## laptop setup
-The laptop can plug in switch to connect by wired, and connect wifi to use Internet, you can see the below picture.
+The laptop can plug in switch to connect by wired, and connect wifi to use Internet, you can see the figure 4.
 
-![](https://i.imgur.com/DJ7ZApE.png)
+![](https://i.imgur.com/XLhtMfw.png)
+Fig.4 Network setup
+
 
 ### Network setting
 Your laptop fix wired ip is 10.42.0.X, X is arbitrary number, but **1, 2 and 3 are used**. The fix wired ip setting can refer manual and command setting. 
 
 1. Manual setting
 
-Click setting --> network --> edit wired network --> IPV4 
-Change IPV4 method --> manual
-Address --> 10.42.0.X
-Netmask --> 24
-Related setting can see below picture.
-(picture)
+Click setting --> network --> edit wired network --> IPV4 \
+Change IPV4 method --> manual \
+Address --> 10.42.0.X \
+Netmask --> 24 \
+Related setting can see the figure 5.
+
+![](https://i.imgur.com/AoGPMWZ.png) \
+Fig.5 Manual network setting
+
 
 2. Command setting
 
@@ -135,17 +160,17 @@ laptop $ ping 10.42.0.3
 ```
 
 ### SSH
-*SSH to LoCoBot and Xavier-NX(number).*
+*SSH to LoCoBot and Xavier-NX[Num].*
 ```
  $ ssh locobot@10.42.0.2
- $ ssh Xavier-NX(number)@10.42.0.3
+ $ ssh Xavier-NX[Num]@10.42.0.3
 ```
 
 ### ROS connection
 *Setting environment variable to connect ROS.*
 ```
  $ export ROS_IP=l0.42.0.X
- $ export ROS_MASTER_URI=http://10.42.0.3:11311
+ $ export ROS_MASTER_URI=http://10.42.0.2:11311
 ```
 
 ### Remote connection (VNC)
@@ -176,13 +201,16 @@ laptop $ vncviewer
 You will see this window.
 
 ![](https://i.imgur.com/b5PmO4P.png)
+Fig.6 Vnc viewer window
 
 select File --> new connection or press Ctrl+n
 
-![](https://i.imgur.com/yX5LcSN.png)
+![](https://i.imgur.com/yX5LcSN.png) \
+Fig.7 Vnc viewer setting
 
 Fill VNC Server and Name, and then click it to connect VNC server, if you see this picture. Now you can remote the robot!
 ![](https://i.imgur.com/FQBAczx.jpg)
+Fig.8 Remote desktop
 
 #### VNC viewer on Mac
 
@@ -213,87 +241,76 @@ The common commands are as following
 * `shift`+ arrow key change window 
 
 ### How to connect 
-We will introduce three methods to access LoCoBot and Xavier-NX, make sure you already finished above setting.
+We will introduce three methods to access LoCoBot, make sure you already finished above setting.
 
 >  X11_Forward
 
-First, ssh into LoCoBot or Xavier-NX, open camera and type rviz, then you will see rviz on your laptop.
+First, edit your ssh_config on the laptop, and ssh into LoCoBot, open camera and type rviz on your laptop, then you will see rviz on your laptop.
 
-*SSH into LoCoBot or Xavier-NX.*
+*Edit ssh config.*
+```
+ laptop $ sudo vim /etc/ssh/ssh_config
+```
+
+*Modifiy ForwardX11 to yes and uncomment.*
+![](https://i.imgur.com/zIYR24G.png) \
+Fig.9 ssh_config setting
+
+*SSH into LoCoBot.*
 ```
  laptop $ ssh locobot@10.42.0.2 
- laptop $ ssh xavier-nx(number)@10.42.0.3
 ```
 
 *Open D435.*
 ```
- Xavier-NX $ source Xavier-NX/xavier-nx_docker_run.sh
- docker $ source environment.sh
- docker $ roscore
- locobot $ sis_base
+ locobot $ roslaunch realsense2_camera rs_rgbd.launch
 ```
 
 *Open Rviz.*
 ```
- locobot $ rivz
- xavier-nx $ rivz
+ laptop $ rivz
 ```
 
 > VNC
 
-First, ssh into LoCoBot or Xavier-NX, open vnc server and wait vnc viewer to connect it, then you will see remote desktop on your laptop.
+First, ssh into LoCoBot, open vnc server and wait vnc viewer to connect it, then you will see remote desktop on your laptop.
 
-*SSH into LoCoBot or Xavier-NX.*
+*SSH into LoCoBot*
 ```
  laptop $ ssh locobot@10.42.0.2 
- laptop $ ssh xavier-nx(number)@10.42.0.3
-```
-
-*For Xavier-NX.*
-```
- Xavier-NX $ source Xavier-NX/vnc_start.sh
 ```
 
 *For LoCoBot.*
 ```
- locobot $ source pyrobot/Docker/locobot/vnc_start.sh
+ locobot $ source ~/sis2021/vnc/vnc_start.sh
 ```
 
 Use vnc viewer to connect it. 
  
 > noVNC
 
-First, ssh into LoCoBot or Xavier-NX, open vnc server and novnc, then you can use browser to connect it.
+First, ssh into LoCoBot, open vnc server and novnc, then you can use browser to connect it.
 
 *SSH into LoCoBot or Xavier-NX.*
 ```
  laptop $ ssh locobot@10.42.0.2 
- laptop $ ssh xavier-nx(number)@10.42.0.3
-```
-
-*For Xavier-NX.*
-```
- Xavier-NX $ source Xavier-NX/vnc_start.sh
-```
-
-*Open another terminal.*
-```
- Xavier-NX $ source Xavier-NX/novnc_start.sh
 ```
 
 *For LoCoBot.*
 ```
- locobot $ source pyrobot/Docker/locobot/vnc_start.sh
+ locobot $ source ~/sis2021/vnc/vnc_start.sh
 ```
 
 *Open another terminal.*
 ```
- locobot $ source pyrobot/Docker/locobot/novnc_start.sh
+ locobot $ source ~/sis2021/vnc/novnc_start.sh
 ```
 
 open the browser URL input ==http://remote_IP:6080/vnc.html== 
 you will see login interface, click connect and input password, then you will can remote the robot. 
 
-![](https://i.imgur.com/fIlkleG.png)
+![](https://i.imgur.com/fIlkleG.png) \
+Fig.10 noVNC window
 
-![](https://i.imgur.com/Ev8BpqQ.jpg)
+![](https://i.imgur.com/Ev8BpqQ.jpg) \
+Fig.11 Remote desktop
