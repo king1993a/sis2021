@@ -13,7 +13,7 @@ The LoCoBot is a low-cost mobile manipulator suitable for both navigation and ma
 - Intel NUC NUC8i3BEH core i3 Mini PC
 - WidowX 200 Mobile Manipulator
 - Intel® RealSense™ Depth Camera D435
-![](https://i.imgur.com/3pOKess.jpg)
+![](https://i.imgur.com/3pOKess.jpg) \
 Fig.1 LoCoBot basic setup
 
 
@@ -22,14 +22,14 @@ The LoCoBot's NUC is no GPU, so we added Xavier-NX to execute perception algorit
 > For the sis2021 course required
 - Xavier-Nx
 - Switch
-![](https://i.imgur.com/vndu35K.jpg)
+![](https://i.imgur.com/vndu35K.jpg) \
 Fig.2 Addition setup
 
 ## Network setup
 
 Xavier-NX and NUC are connected to switch by RJ45 so that can connect each other and connect wifi to use Internet.  The LoCoBot and Xavier-NX password are **locobot** and **111111**, respectively.
 
-![](https://i.imgur.com/K7OEK8j.png)
+![](https://i.imgur.com/K7OEK8j.png) \
 Fig.3 LoCoBot network setup
 
 
@@ -114,7 +114,7 @@ $ source ~/sis2021/environment.sh
 ## laptop setup
 The laptop can plug in switch to connect by wired, and connect wifi to use Internet, you can see the figure 4.
 
-![](https://i.imgur.com/XLhtMfw.png)
+![](https://i.imgur.com/XLhtMfw.png) \
 Fig.4 Network setup
 
 
@@ -200,7 +200,7 @@ laptop $ vncviewer
 
 You will see this window.
 
-![](https://i.imgur.com/b5PmO4P.png)
+![](https://i.imgur.com/b5PmO4P.png) \
 Fig.6 Vnc viewer window
 
 select File --> new connection or press Ctrl+n
@@ -209,7 +209,7 @@ select File --> new connection or press Ctrl+n
 Fig.7 Vnc viewer setting
 
 Fill VNC Server and Name, and then click it to connect VNC server, if you see this picture. Now you can remote the robot!
-![](https://i.imgur.com/FQBAczx.jpg)
+![](https://i.imgur.com/FQBAczx.jpg) \
 Fig.8 Remote desktop
 
 #### VNC viewer on Mac
