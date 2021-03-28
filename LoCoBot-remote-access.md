@@ -252,7 +252,7 @@ First, edit your ssh_config on the laptop, and ssh into LoCoBot, open camera and
  laptop $ sudo vim /etc/ssh/ssh_config
 ```
 
-*Modifiy ForwardX11 to yes and uncomment.*
+*Modifiy ForwardX11 to yes and uncomment.* \
 ![](https://i.imgur.com/zIYR24G.png) \
 Fig.9 ssh_config setting
 
