@@ -2,7 +2,7 @@
 
 ## Members
 * 葉邦彥 (github account: huibaisedeshijie), Team Lead and Point of Contact
-* 陳懷城 (github account: )
+* 陳懷城 (github account: ifntng)
 * 黃致凱 (github account: )
 * 吳孟勳 (github account: APOPTOXIN1412)
 * 唐瑋辰 (github account: andy64785)
