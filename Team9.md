@@ -1,10 +1,10 @@
-# Team [Num]
+# Team 9
 
 ## Members
-* Name 1 (github account: Hong-Rui-Guo), Team Lead and Point of Contact
-* Name 2 (github account: stagmoose)
-* Name 3 (github account: skyspoon)
-* Name 4 (github account: andy14826)
+* 郭弘瑞 (github account: Hong-Rui-Guo), Team Lead and Point of Contact
+* 蔡松廷 (github account: stagmoose)
+* 劉建甫 (github account: sky1981)
+*  (github account: andy14826)
 
 ## Laptop Setup and Remote Access
 * Laptop 1: Native Ubuntu 18, ROS Melodic;
