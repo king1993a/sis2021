@@ -6,7 +6,7 @@
 * 張家誠 (github account: ChangChiaChengcccc)
 * 柳翊捷 (github account: lioujg)
 * 林澤翰 (github account: hanklin52934)
-* 丘佳祐 (github account: XXX)
+* 丘佳祐 (github account: vincent870209)
 
 ## Laptop Setup and Remote Access
 * Laptop 1: Native Ubuntu 20.04 ROS Noetic; VNC Client XX.XX version; 
