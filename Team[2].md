@@ -1,9 +1,10 @@
-# Team [Num]
+# Team [2]
 
 ## Members
-* Name 1 (github account: XXX), Team Lead and Point of Contact
-* Name 2 (github account: XXX)
-
+* Ray Huang (ray0727), Team Lead and Point of Contact
+* Yan Liu (ziyan0302)
+* Rich Tong (richtong888)
+* Sam Lin (TODO)
 ## Laptop Setup and Remote Access
 * Laptop 1: Native Ubuntu 18, ROS Melidic; VNC Client XX.XX version; 
 * Laptop 2: VirtualBox with Ubuntu 18 and ROS Melidic 
