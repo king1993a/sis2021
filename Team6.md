@@ -1,12 +1,12 @@
-# Team [Num]
+# Team 6
 
 ## Members
-* Name 1 (github account: shengwen-tw), Team Lead and Point of Contact
-* Name 2 (github account: EasonHuang-tw)
-* Name 3 (github account: ChangChiaChengcccc)
-* Name 4 (github account: lioujg)
-* Name 5 (github account: XXX)
-* Name 6 (github account: XXX)
+* 鄭聖文 (github account: shengwen-tw), Team Lead and Point of Contact
+* 黃羿翔 (github account: EasonHuang-tw)
+* 張家誠 (github account: ChangChiaChengcccc)
+* 柳翊捷 (github account: lioujg)
+* 林澤翰 (github account: hanklin52934)
+* 丘佳祐 (github account: XXX)
 
 ## Laptop Setup and Remote Access
 * Laptop 1: Native Ubuntu 20.04 ROS Noetic; VNC Client XX.XX version; 
