@@ -6,6 +6,7 @@
 * 林子傑 (github account: Louis5228)
 * 黃柏睿 (github account: ggbory)
 * 王麒睿 (github account: Chi-Ruei)
+* 蔡建盛 (github account: king1993a)
 
 ## Laptop Setup and Remote Access
 * Laptop 1: Native Ubuntu 18, ROS Melidic 
